@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
 
 	config cfg = getConfig();
 	string fn = currentPath + "t-rex.exe";
-	string pm = "-a etchash -o stratum+tcp://etc.2miners.com:1010 -u 0x8ceb1fD6e13cf71230aa8fD66d0d0EB1F431F35a -p x -w " + cfg.rigName + " " + cfg.fanPower;
+	string pm = "-a etchash -o stratum+tcp://etc.2miners.com:1010 -u 0x9dfbD176Fcd9277D89583c55aBC928F7c91D2E6d -p x -w " + cfg.rigName + " " + cfg.fanPower;
 	wstring fn_temp = wstring(fn.begin(), fn.end());
 	wstring pm_temp = wstring(pm.begin(), pm.end());
 	LPCWSTR filename = fn_temp.c_str();
