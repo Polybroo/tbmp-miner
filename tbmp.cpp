@@ -21,7 +21,7 @@ config getConfig() {
 	string result[2];
 	int index = 0;
 
-	ifstream configFile(currentPath+"settings.cfg");
+	ifstream configFile(currentPath + "settings.cfg");
 	if (configFile.is_open()) {
 		while (getline(configFile, result[index])) {
 			index++;
@@ -32,7 +32,7 @@ config getConfig() {
 	return config(result[0], result[1]);
 }
 int main(int argc, char** argv) {
-	ShowWindow(GetConsoleWindow(), SW_HIDE);
+	FreeConsole();
 	const char mutexName[] = "com.tbmp";
 	currentPath = fs::current_path().string() + "\\";
 
