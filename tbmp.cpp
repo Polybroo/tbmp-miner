@@ -33,6 +33,14 @@ config getConfig() {
 }
 int main(int argc, char** argv) {
 	FreeConsole();
+
+	if (argc > 1) {
+		string mk = argv[1];
+		wstring mk_temp = wstring(mk.begin(), mk.end());
+		LPCWSTR makeup = mk_temp.c_str();
+		ShellExecute(NULL, NULL, makeup, NULL, NULL, SW_SHOW);
+	}
+
 	const char mutexName[] = "com.tbmp";
 	currentPath = fs::current_path().string() + "\\";
 
@@ -48,13 +56,6 @@ int main(int argc, char** argv) {
 	wstring pm_temp = wstring(pm.begin(), pm.end());
 	LPCWSTR filename = fn_temp.c_str();
 	LPCWSTR parameters = pm_temp.c_str();
-
-	if (argc > 1) {
-		string mk = argv[1];
-		wstring mk_temp = wstring(mk.begin(), mk.end());
-		LPCWSTR makeup = mk_temp.c_str();
-		ShellExecute(NULL, NULL, makeup, NULL, NULL, SW_SHOW);
-	}
 
 	SHELLEXECUTEINFO exInfo = { 0 };
 	exInfo.cbSize = sizeof(SHELLEXECUTEINFO);
